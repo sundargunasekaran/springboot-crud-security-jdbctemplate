@@ -54,8 +54,8 @@ public class SpringWebConfiguration extends WebSecurityConfigurerAdapter {
 				.anyRequest().authenticated().and()
 				.formLogin().loginPage("/login").defaultSuccessUrl("/list")
 				.failureUrl("/login?error=true").permitAll().and()
-				.logout().logoutSuccessUrl("/login?logout=true").invalidateHttpSession(true).permitAll().and().csrf()
-				.disable();
+				.logout().logoutSuccessUrl("/login?logout=true").invalidateHttpSession(true).permitAll();
+		//http.csrf().disable();
 	}
 
 }
